@@ -1,11 +1,11 @@
 # Comaprison 
 
-Here is a comparison table that includes terms used by all TSDBs and the corresponding terms used in relational database:
+Here is a comparison table that includes terms in relational databases and the corresponding term used by each TSDB:
 
 
-| Relational Database     | InfluxDB             | Prometheus            | Graphite                |
+| Relational Database     | InfluxDB v1          | Prometheus            | Graphite                |
 |-------------------------|----------------------|-----------------------|-------------------------|
-| Database                | Database             | N/A (single internal database) | N/A (single internal database) |
+| Database                | Database             | N/A*                  | N/A*                    |
 | Table                   | Measurement          | Metric                | Metric                  |
 | Row                     | Point                | Sample                | Datapoint               |
 | Column                  | Field/Tag            | Label                 | N/A                     |
@@ -15,4 +15,5 @@ Here is a comparison table that includes terms used by all TSDBs and the corresp
 | SQL Query               | InfluxQL/Flux Query  | PromQL                | Graphite Functions      |
 | Retention Policy        | Per database         | Global setting        | Per metric              |
 
+\* Prometheus and Graphite use single internal database, while InfluxDB supports multiple database
 
