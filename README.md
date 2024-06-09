@@ -2,7 +2,7 @@
 
 A time series database is a specialized database that efficiently stores and retrieves time-stamped data. The data stored is known as time series data due to is time-based nature, where each datapoint is associated with a timestamp that indicates when it was recorded. TSDBs offer several advantages over traditional databases and other storage solutions when it comes to handling time series data.
 
-There are several open source TSDBs available in the market today. These TSDBs are constantly evolving and improving, and each has its own strengths and weaknesses. Choosing the right one depends on the specific use case, data requirements and the organization's infrastructure. 
+There are several open source TSDBs available in the market today, and each has its own strengths and weaknesses. Choosing the right one depends on the specific use case, data requirements and the organization's infrastructure. 
 
 This repository provides instructions on how to use three popular TSDBs using Docker images and minimal configuration. A Python script is included to generate random data.
 
