@@ -30,3 +30,6 @@ docker run -d \
 $ python3 write_random.py
 ```
 
+# View the data
+
+![data](graphite.png)
