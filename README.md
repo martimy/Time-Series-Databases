@@ -4,16 +4,24 @@ A time series database is a specialized database that efficiently stores and ret
 
 There are several open source TSDBs available in the market today. These TSDBs are constantly evolving and improving, and each has its own strengths and weaknesses. Choosing the right one depends on the specific use case, data requirements and the organization's infrastructure. 
 
-This repository provides insturctions on how to use three popular TSDBs in a quick and easy way:
+This repository provides insturctions on how to use three popular TSDBs using Docker images and minimal configuration. A Python script is included to generate random data.
 
 - [Graphite](https://graphiteapp.org/)
 - [InfluxDB](https://www.influxdata.com/)
 - [Prometheus](https://prometheus.io/)
 
-Each one of these three TSDBs has its one features and strenghts.
+## Usage
+
+Clone this repository
+
+```
+$ git clone https://github.com/martimy/Time-Series-Databases
+```
+
+Change to the directory of each TSDB and follow the instructions provided.
 
 
-## Data Models
+## Data Model Comparsion
 
 The three TSDBs differ significantly in their data models, which impacts their use cases, performance, and features. The following a summary of thier data models:
 
