@@ -2,3 +2,6 @@ influxdb/data
 influxdb/config
 influxdb/virtual
 prometheus/virtual
+graphite/virtual
+graphite/scripts
+graphite/graphite
