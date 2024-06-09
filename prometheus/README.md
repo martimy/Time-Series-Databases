@@ -36,7 +36,7 @@ docker run -d \
     prom/prometheus
 ```
 
-In the previous command, the Docker container is run on the host network so it can reach the HTTP server that will generate the date next.
+In the previous command, the Docker container is run on the host network so it can reach the HTTP server that will generate the data next.
 
 
 ## Using Python to Write Data
@@ -49,3 +49,5 @@ $ python3 write_random.py
 
 While the script is running open a browser and go to `localhost:9090'. Click on the `metric explorer` then search and select `random_number`. Click on execute to the graph.
  
+
+![Screenshot](prometheus.png)
