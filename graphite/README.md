@@ -1,7 +1,7 @@
 # Graphite
 
 
-# Install Docker
+## Install Docker
 
 Pull the official Docker container.
 
@@ -9,7 +9,10 @@ Pull the official Docker container.
 $ docker pull graphiteapp/graphite-statsd
 ```
 
-# Run Docker Container
+## Quick Start
+
+
+1. Run Docker image
 
 
 ```
@@ -24,12 +27,23 @@ docker run -d \
     graphiteapp/graphite-statsd
 ```
 
-# Use Python to write data
+2. Send data to Graphite
+
+```
+$ echo "random_numbers.value 0.5 `date +%s`" | nc localhost 2003
+```
+
+3. View the data
+
+Point your Browser to `localhost:9000'. Select `random_numbers' from the left panel.
+
+## Using Python to write data
+
+Run the Python code for a few minutes and watch the chart being populated. Stop the script using `CTRL-C`.
 
 ```
 $ python3 write_random.py
 ```
 
-# View the data
 
 ![data](graphite.png)
