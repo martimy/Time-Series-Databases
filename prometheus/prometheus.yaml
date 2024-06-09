@@ -1,0 +1,13 @@
+# Prometheus configuration file
+
+global:
+  scrape_interval: 5s
+
+# metrics_path defaults to '/metrics'
+# scheme defaults to 'http'.
+scrape_configs:
+  - job_name: 'random_number_job'
+    static_configs:
+      - targets: ['localhost:8000']
+
+
