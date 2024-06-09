@@ -66,16 +66,16 @@ http_requests_total{method="GET", handler="/api"} 1027 1622543199
 ```
 
 
-## Comparison 
+## Comparison with Relational Databases Terms
 
-Here is a comparison table that includes terms in relational databases and the corresponding term used by each TSDB:
+If you are familiar with relational databases, the following table provides a comparison between concepts and terms used in both types of databases.
 
 
 | Relational Database     | InfluxDB v1          | Prometheus            | Graphite                |
 |-------------------------|----------------------|-----------------------|-------------------------|
 | Database                | Database             | N/A*                  | N/A*                    |
 | Table                   | Measurement          | Metric                | Metric                  |
-| Row                     | Point                | Sample                | Datapoint               |
+| Row                     | Point (measurement + tag set + field set + timestamp) | Sample (value + timestamp) | Datapoint (value + timestamp)              |
 | Column                  | Field/Tag            | Label                 | N/A                     |
 | Primary Key             | Measurement name + Tag set + Timestamp | Metric name + Label set + Timestamp | Metric path + Timestamp |
 | Index                   | Tag index            | N/A                   | N/A                     |
