@@ -1,6 +1,8 @@
 # InfluxDB
 
-InfluxDB, like other TSDBs, uses timestamps to organize data points. Here are some of the key terms used by InfluxDB:
+InfluxDB is available in two versions and there is a third version to be available shortly. InfluxDB v2 uses the query language, Flux, which has not been successful in the market. So this example will focus on using InfluxDB v1 and the query langauge, InfluxQL, which is expected to be used in furture developments. 
+
+Here are some of the key terms used by InfluxDB v1:
  
 - database: refers to a structured set of data that is optimized for time series data. A database consists of measurements.
 - measurement: this is where InfluxDB stores time series data points. 
@@ -8,18 +10,6 @@ InfluxDB, like other TSDBs, uses timestamps to organize data points. Here are so
 - field: Fields hold the actual data values. 
 - tag: tags are indexed metadata.
 - series: represents a unique set of tag and field values within a measurement. 
-
-If you are familiar with relational databases, the following is a comparison between the terminology used by InfluxDB and relational databases:
-
-
-RelationalDB | InfluxDB
----|---
-Database | Database
-Table | Measurement
-Row | Point 
-Columns | Fields and tags
-Primary key | Combination of measurement name, tag set, and timestamp
-Index | Tags are used to index data
 
 
 ## Docker Installtion
@@ -54,7 +44,7 @@ docker run \
 $ curl -i -XPOST http://localhost:8086/query --data-urlencode "q=CREATE DATABASE mydb"
 ```
 
-3. To write data:
+3. Write some data:
 
 ```
 $ curl -i -XPOST 'http://localhost:8086/write?db=mydb' \
@@ -76,9 +66,20 @@ You can use Python to write data to InfluxDB using the `influxdb` module. Run th
 $ python3 write_random.py
 ```
 
-You can use `influx` utility to inspect the database:
+Retrieve all random numbers written by the Python code in csv format:
 
-In the example below shows the database hase two measurements. 
+```
+curl -G 'http://localhost:8086/query?pretty=true' \
+--data-urlencode "db=mydb" \
+--data-urlencode "q=SELECT \"value\" FROM \"random_numbers\" WHERE \"host\"='server01'" \
+--header "Accept: application/csv" -o output.csv
+```
+
+## using influx
+
+You can use `influx` utility to setup InfluxDB databases and perform other tasks:
+
+The example below shows the database hase two measurements. 
 
 ```
 $ docker exec -it influxdb influx
@@ -105,15 +106,6 @@ time                host     value
 1717896872352179116 server01 0.6671158236674488
 
 > quit
-```
-
-Retrieve all random numbers written by the Python code in csv format:
-
-```
-curl -G 'http://localhost:8086/query?pretty=true' \
---data-urlencode "db=mydb" \
---data-urlencode "q=SELECT \"value\" FROM \"random_numbers\" WHERE \"host\"='server01'" \
---header "Accept: application/csv" -o output.csv
 ```
 
 [For more information](https://docs.influxdata.com/influxdb/v1/guides/write_data/)
