@@ -4,7 +4,7 @@
 
 ```
 
-Prometheus uses a push model to collect and store data. 
+Prometheus uses a pull model to collect and store data. 
 Rather than pushing data to Prometheus, you typically set up a metrics endpoint that Prometheus scrapes at regular intervals.
 
 To simulate pushing random numbers to Prometheus, you need to expose an HTTP endpoint that Prometheus can scrape. The prometheus_client Python library can help you create this endpoint.
