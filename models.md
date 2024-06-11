@@ -10,7 +10,7 @@ Graphite metrics are formatted as follows:
 metric_path metric_value metric_timestamp
 ```
 
-- Metric Path: This is a sot-separated hierarchical names.
+- Metric Path: This is a dot-separated hierarchical names.
 - Value: Numeric data point.
 - Timestamp: Each data point is associated with a timestamp.
 
