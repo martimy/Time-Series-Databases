@@ -35,7 +35,7 @@ $ echo "random_numbers.value 0.5 `date +%s`" | nc localhost 2003
 
 3. View the data
 
-Point your Browser to `localhost:9000'. Select `random_numbers' from the left panel.
+Point your Browser to `localhost:9000`. Select `random_numbers` from the left panel.
 
 ## Using Python to write data
 
