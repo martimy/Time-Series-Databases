@@ -47,7 +47,7 @@ You can use Python to create data for Prometheus to scrape. Run the script for f
 $ python3 write_random.py
 ```
 
-While the script is running open a browser and go to `localhost:9090'. Click on the `metric explorer` then search and select `random_number`. Click on execute to the graph.
+While the script is running open a browser and go to `localhost:9090`. Click on the `metric explorer` then search and select `random_number`. Click on execute to the graph.
  
 
 ![Screenshot](prometheus.png)
