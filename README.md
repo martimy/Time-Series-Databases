@@ -10,6 +10,8 @@ This repository provides instructions on how to use three popular TSDBs using Do
 - [InfluxDB](https://www.influxdata.com/)
 - [Prometheus](https://prometheus.io/)
 
+![Infographics](tsdb_infographic.png)
+
 ## Usage
 
 Clone this repository
